@@ -1,3 +1,6 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+}
 
 h1 {
     text-align: center;
@@ -19,4 +22,32 @@ h1 {
     100% {
         color: violet;
     }
+}
+
+.card-title {
+    text-align: center;
+    color: darkcyan;
+}
+
+.role {
+    text-align: center;
+    color: brown;
+}
+
+#info-list {
+    list-style-type: none;
+}
+
+#info,
+#info-list {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.framework {
+    color: red;
 }
