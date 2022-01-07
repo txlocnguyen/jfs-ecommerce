@@ -4,15 +4,10 @@ body {
     background-repeat: repeat;
     background-size: 7%;
     background-color: #fff;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 /* Add a black background color to the top navigation */
 nav {
     background-color: #333;
-    overflow: hidden;
     padding: 20px 20px 20px 20px;
 }
 
