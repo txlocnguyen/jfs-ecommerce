@@ -8,22 +8,26 @@
   background-color: black;
   padding: 5px;
 }
-.carousel-inner{
+
+.carousel-inner {
   margin: auto;
   padding: 0;
 }
+
 @media (max-width: 800px) {
-  .carousel img{
+  .carousel img {
     width: auto;
 
   }
 }
+
 @media (min-width: 800px) {
-  .carousel img{
+  .carousel img {
     width: auto;
     height: 1000px;
   }
 }
+
 .main-banner {
   border-bottom: 3px dotted #eee;
   padding-top: 50px;
