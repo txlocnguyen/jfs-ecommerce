@@ -108,19 +108,32 @@
         </div>
     </div>
     <!-- ***** Contact Area Ends ***** -->
+
+    <!-- ***** Form Area Starts ***** -->
     <h2> Add Your Own Items</h2>
     <p>Add a new item below and we will respond to it within 24 hours</p>
-    <form action="/action_page.php" id="usrform">
-        <label for="product-name">Product name:</label><br>
-        <input type="text" id="product-name" name="product-name" placeholder="Your Product's Name" required><br>
-        <label for="image-url">Image URL:</label><br>
-        <input type="text" id="image-url" name="image-url" placeholder="Your Product's Image" required><br>
-        <label for="description">Description:</label><br>
-        <textarea rows="4" cols="50" name="description" id="description" placeholder="Describe your item here"
-            required></textarea>
-        <br>
-        <input type="submit" value="Submit" class="btn btn-success">
-    </form>
+    <div class="center-block">
+        <form id="newItemForm">
+            <div class="form-group">
+                <label for="newItemName">Name</label>
+                <input type="text" class="form-control" id="newItemName">
+            </div>
+            <div class="form-group">
+                <label for="newItemDescription">Description</label>
+                <textarea type="text" class="form-control" id="newItemDescription"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="newItemImageUrl">Image URL</label>
+                <input type="text" class="form-control" id="newItemImageUrl">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Save Item</button>
+        </form>
+    </div>
+    <!-- ***** Form Area Ends ***** -->
+
+
     <!-- ***** Subscribe Area Starts ***** -->
     <div class="subscribe">
         <div class="container">
@@ -209,6 +222,8 @@
             </div>
         </footer>
     </div>
+    <script type="text/javascript" src="../resources/js/itemsController.js"></script>
+    <script type="text/javascript" src="../resources/js/item-form.js"></script>
 </body>
 
 </html>

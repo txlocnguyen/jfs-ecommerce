@@ -11,6 +11,7 @@ class ItemsController {
             img: img
         };
         this.items.push(item);
+        localStorage.setItem("items", JSON.stringify(this.items));
     }
     loadItemsFromLocalStorage() {
         const storageItems = localStorage.getItem("items")
@@ -22,4 +23,5 @@ class ItemsController {
             }
         }
     }
+    
 }

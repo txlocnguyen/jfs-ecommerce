@@ -117,3 +117,7 @@ label {
   padding: 150px;
   background-image: url(../images/help-background.jpg)
 }
+.center-block{
+  display: inline-block;
+  text-align: center;
+}
