@@ -120,4 +120,9 @@ label {
 .center-block{
   display: inline-block;
   text-align: center;
+  width: 60%;
+  height: auto
+}
+#newItemForm button{
+  margin-top: 25px;
 }

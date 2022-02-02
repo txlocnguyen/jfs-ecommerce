@@ -1,5 +1,6 @@
 const itemsController = new ItemsController(0);
 const newItemForm = document.querySelector('#newItemForm');
+
 newItemForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const newItemName = document.querySelector('#newItemName');
@@ -11,9 +12,11 @@ newItemForm.addEventListener("submit", (event) => {
     const description = newItemDescription.value;
     const imageUrl = newItemImageUrl.value;
 
-    /*
-        Validation code here
-    */
+    //using regex to validate image format
+    if (!/^https?:\/\/.+\/.+$/.test(imageUrl)) {
+        alert("Image need to be in correct format");
+        return null;
+    }
 
     // Add the item to the ItemsController
     itemsController.addItem(name, description, imageUrl);
