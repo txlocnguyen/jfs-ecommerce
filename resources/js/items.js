@@ -8,8 +8,7 @@ function addItemCard(item) {
         '        <p class="card-text">' + item.description + '</p>\n' +
         '        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>\n' +
         '    </div>\n' +
-        '</div>\n' +
-        '<br/>';
+        '</div>';
     const itemsContainer = document.getElementById("list-items-row");
     itemsContainer.innerHTML += itemHTML;
 }
