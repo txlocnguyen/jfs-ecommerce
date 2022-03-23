@@ -19,8 +19,8 @@ function addItemCard(item) {
         deleteBtn.addEventListener("click", () => {
             let item = deleteBtn.parentElement.parentElement;
             itemsController.delete(item.id);
-            location.reload();
-        })            
+            
+        })           
     }
 }
 
@@ -48,7 +48,7 @@ function loadCardsListFromItemsController() {
     }
 }
 function loadItemsFromDatabase() {
-    fetch('http://localhost:8080/item/all')
+    fetch('https://locnguyen-ecommerce-backend.herokuapp.com/item/all')
     .then(response => response.json())
     .then(data => {
         console.log(data.length);

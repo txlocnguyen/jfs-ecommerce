@@ -27,7 +27,7 @@ class ItemsController {
     save({name, description, imageUrl}){
         const data = { name,  description, imageUrl };
 
-        fetch('http://localhost:8080/item', {
+        fetch('https://locnguyen-ecommerce-backend.herokuapp.com/item', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ class ItemsController {
     }
 
     delete(itemId){
-        fetch(`http://localhost:8080/item/${itemId}`, {
+        fetch(`https://locnguyen-ecommerce-backend.herokuapp.com/item/${itemId}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
