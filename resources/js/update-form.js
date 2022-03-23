@@ -18,5 +18,4 @@ editItemForm.addEventListener("submit", (event) => {
     editItemName.value = '';
     editItemDescription.value = '';
     editItemImageUrl.value = '';
-    window.sessionStorage.removeItem("tempId");
 })
