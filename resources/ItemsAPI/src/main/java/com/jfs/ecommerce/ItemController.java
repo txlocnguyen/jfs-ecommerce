@@ -35,12 +35,26 @@ public class ItemController
     }
     @CrossOrigin
     @PutMapping( "/{id}" )
-    public Item update( @PathVariable int id, @RequestParam(required = false) String name,
-                        @RequestParam(required = false) String description,
-                        @RequestParam(required = false) String imageUrl)
+    public Item update( @RequestBody ItemDto itemDto, @PathVariable Integer id )
     {
-        itemService.updateItem(id, name, description, imageUrl);
-        return itemService.findById( id );
+        Item item = itemService.findById( id );
+        if(itemDto.getName() != ""){
+            item.setName( itemDto.getName() );
+        } else{
+            item.setName(item.getName());
+        }
+        if(itemDto.getDescription() != ""){
+            item.setDescription( itemDto.getDescription() );
+        }else{
+            item.setDescription(item.getDescription());
+        }
+        if(itemDto.getImageUrl() != ""){
+            item.setImageUrl( itemDto.getImageUrl() );
+        }
+        else{
+            item.setImageUrl( item.getImageUrl() );
+        }
+        return itemService.save( item );
     }
     @CrossOrigin
     @DeleteMapping( "/{id}" )
