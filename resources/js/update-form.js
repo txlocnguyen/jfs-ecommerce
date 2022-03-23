@@ -12,10 +12,11 @@ editItemForm.addEventListener("submit", (event) => {
     const imageUrl = editItemImageUrl.value;
 
     // Add the item to the ItemsController
-    itemsController.update({name, description, imageUrl});
-
+    itemsController.update(window.sessionStorage.getItem("tempId"), {name, description, imageUrl});
+    
     // Clear the form
     editItemName.value = '';
     editItemDescription.value = '';
     editItemImageUrl.value = '';
+    window.sessionStorage.removeItem("tempId");
 })

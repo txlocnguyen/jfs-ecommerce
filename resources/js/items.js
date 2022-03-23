@@ -5,7 +5,7 @@ function addItemCard(item) {
         '    <div class="card-body">\n' +
         '        <h5 class="card-title">' + item.name + '</h5>\n' +
         '        <p class="card-text">' + item.description + '</p>\n' +
-        '        <a href="update_form.html" class="btn btn-primary btn-update"><i class="fas fa-edit"></i></a>' +
+        '        <a href="#" class="btn btn-primary btn-update"><i class="fas fa-edit"></i></a>' +
         '        <a href="#" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></a>\n' +
         '    </div>\n' +
         '</div>';
@@ -19,6 +19,17 @@ function addItemCard(item) {
             itemsController.delete(item.id);
             setTimeout(()=>{
                 window.location.reload();
+            },500);
+        })           
+    }
+    let updateButton = document.getElementsByClassName("btn-update");
+    for(let i = 0; i < updateButton.length; i++) {
+        let updateBtn = updateButton[i];
+        updateBtn.addEventListener("click", () => {
+            let item = updateBtn.parentElement.parentElement;
+            window.sessionStorage.setItem("tempId", item.id);
+            setTimeout(()=>{
+                window.location.href="./update_form.html";
             },500);
         })           
     }

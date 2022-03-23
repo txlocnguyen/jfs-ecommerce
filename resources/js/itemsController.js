@@ -43,9 +43,9 @@ class ItemsController {
         console.error('Error:', error);
         });
     }
-    update({name, description, imageUrl}){
+    update(itemId, {name, description, imageUrl}){
         const data = { name,  description, imageUrl };
-        fetch(`https://locnguyen-ecommerce-backend.herokuapp.com/item/${this.currentId}`, {
+        fetch(`https://locnguyen-ecommerce-backend.herokuapp.com/item/${itemId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
