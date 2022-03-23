@@ -126,3 +126,7 @@ label {
 #newItemForm button{
   margin-top: 25px;
 }
+.ittext{
+  font-style: italic;
+  font-weight: lighter;
+}

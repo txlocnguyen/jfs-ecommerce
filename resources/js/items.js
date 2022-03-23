@@ -1,13 +1,11 @@
 const itemsController = new ItemsController(0);
-
 function addItemCard(item) {
     const itemHTML = '<div id="'+item.id +'" class="card col-lg-4 col-md-6 col-12" style="width: 18rem;">\n' +
         '    <img src="' + item.imageUrl + '"  alt="product image">\n' +
         '    <div class="card-body">\n' +
         '        <h5 class="card-title">' + item.name + '</h5>\n' +
         '        <p class="card-text">' + item.description + '</p>\n' +
-        '        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>' +
-        '        <a href="#" class="btn btn-success"><i class="fas fa-edit"></i></a>' +
+        '        <a href="update_form.html" class="btn btn-primary btn-update"><i class="fas fa-edit"></i></a>' +
         '        <a href="#" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></a>\n' +
         '    </div>\n' +
         '</div>';
@@ -19,11 +17,12 @@ function addItemCard(item) {
         deleteBtn.addEventListener("click", () => {
             let item = deleteBtn.parentElement.parentElement;
             itemsController.delete(item.id);
-            
+            setTimeout(()=>{
+                window.location.reload();
+            },500);
         })           
     }
 }
-
 function loadStorageSampleData() {
     if (!localStorage.getItem("items")) {
         const sampleItems = [{

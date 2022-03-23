@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating Item</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/ed7865b7c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/style-help.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> <img src="../resources/images/logo.png" alt="logo" width="150"
+                    height="100"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ***** Main Area Start ***** -->
+    <h2>Edit Your Item Below</h2>
+    <p>Please input updated value below and press submit to update the item <br/><span class="ittext">You can leave the box blank for any section you wish not to update</span></p>
+    <div class="center-block">
+        <form id="editItemForm">
+            <div class="form-group">
+                <label for="editItemName">Product's Name</label>
+                <input type="text" class="form-control" id="editItemName" placeholder="Enter Your Product's name">
+            </div>
+            <div class="form-group">
+                <label for="editItemDescription">Product's Description</label>
+                <textarea type="text" class="form-control" id="editItemDescription"
+                    placeholder="Enter Your Product's description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="editItemImageUrl">Image URL of Product</label>
+                <input type="text" class="form-control" id="editItemImageUrl"
+                    placeholder="Enter the image URL of your product">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+
+
+
+    <!-- ***** Main Area Ends ***** -->
+    <!-- ***** Subscribe Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
+                        <span>The best fashion store can deliver.</span>
+                    </div>
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
+                                        placeholder="Your Email Address" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-2">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-dark-button"><i
+                                            class="fa fa-paper-plane"></i></button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul>
+                                <li>Store Location:<br><span>DFW, United States</span></li>
+                                <li>Phone:<br><span>012-345-6789</span></li>
+                                <li>Office Location:<br><span>Dallas, Texas</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li>Work Hours:<br><span>09:00 AM - 5:00 PM Daily</span></li>
+                                <li>Email:<br><span>info@company.com</span></li>
+                                <li>Social Media:<br><span><a href="about.html">Facebook</a>, <a
+                                            href="about.html">Instagram</a>, <a href="about.html">Behance</a>, <a
+                                            href="about.html">Linkedin</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Subscribe Area Ends ***** -->
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="help.html">Customer Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="about.html">Company</a></li>
+                            <li><a href="about.html">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>The Fashion Store</h3>
+                        <p>Your Friendly Neighborhood Fashion Store. Come get the best shopping experience ever !</p>
+                    </div>
+                    <div class="col item social"><a href="about.html"><i class="fa fa-facebook"></i></a><a
+                            href="about.html"><i class="fa fa-twitter"></i></a><a href="about.html"><i
+                                class="fa fa-snapchat"></i></a><a href="about.html"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">The Fashion Store © 2022</p>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="../resources/js/itemsController.js"></script>
+    <script type="text/javascript" src="../resources/js/update-form.js"></script>
+</body>
+
+</html>

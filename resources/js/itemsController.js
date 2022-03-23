@@ -2,6 +2,7 @@ class ItemsController {
     constructor(currentId = 0) {
         this.items = [];
         this.currentId = currentId;
+        this.tempid = 0;
     }
     addItem(name, description, imageUrl) {
         const item = {
@@ -42,9 +43,22 @@ class ItemsController {
         console.error('Error:', error);
         });
     }
-
     update({name, description, imageUrl}){
-        //TODO implement this method
+        const data = { name,  description, imageUrl };
+        fetch(`https://locnguyen-ecommerce-backend.herokuapp.com/item/${this.currentId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
     }
 
     delete(itemId){
