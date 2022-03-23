@@ -13,7 +13,11 @@ class ItemsController {
         };
         this.items.push(item);
         localStorage.setItem("items", JSON.stringify(this.items));
-        this.save({name, description, imageUrl});
+        this.save({
+            name,
+            description,
+            imageUrl
+        });
     }
     loadItemsFromLocalStorage() {
         const storageItems = localStorage.getItem("items")
@@ -25,57 +29,73 @@ class ItemsController {
             }
         }
     }
-    save({name, description, imageUrl}){
-        const data = { name,  description, imageUrl };
+    save({
+        name,
+        description,
+        imageUrl
+    }) {
+        const data = {
+            name,
+            description,
+            imageUrl
+        };
 
         fetch('https://locnguyen-ecommerce-backend.herokuapp.com/item', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-        })
-        .catch((error) => {
-        console.error('Error:', error);
-        });
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
-    update(itemId, {name, description, imageUrl}){
-        const data = { name,  description, imageUrl };
+    update(itemId, {
+        name,
+        description,
+        imageUrl
+    }) {
+        const data = {
+            name,
+            description,
+            imageUrl
+        };
         fetch(`https://locnguyen-ecommerce-backend.herokuapp.com/item/${itemId}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-        console.log('Success:', data);
-        })
-        .catch((error) => {
-        console.error('Error:', error);
-        });
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
 
-    delete(itemId){
+    delete(itemId) {
         fetch(`https://locnguyen-ecommerce-backend.herokuapp.com/item/${itemId}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-        .then(response => console.log("Success:", response))
-        .catch((error) => {
-            console.error("Error:", error);
-        })
+                method: 'DELETE',
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            })
+            .then(response => console.log("Success:", response))
+            .catch((error) => {
+                console.error("Error:", error);
+            })
     }
 
-    findById(itemId){
+    findById(itemId) {
         //TODO implement this method
     }
-    
+
 }
