@@ -15,25 +15,25 @@ public class ItemController
     {
         this.itemService = itemService;
     }
-
+    @CrossOrigin
     @GetMapping( "/all" )
     public Iterable<Item> getItems()
     {
         return itemService.all();
     }
-
+    @CrossOrigin
     @PostMapping
     public Item save( @RequestBody ItemDto itemDto )
     {
         return itemService.save( new Item( itemDto ) );
     }
-
+    @CrossOrigin
     @GetMapping( "/{id}" )
     public Item findItemById( @PathVariable Integer id )
     {
         return itemService.findById( id );
     }
-
+    @CrossOrigin
     @PutMapping( "/{id}" )
     public Item update( @PathVariable int id, @RequestParam(required = false) String name,
                         @RequestParam(required = false) String description,
@@ -42,7 +42,7 @@ public class ItemController
         itemService.updateItem(id, name, description, imageUrl);
         return itemService.findById( id );
     }
-
+    @CrossOrigin
     @DeleteMapping( "/{id}" )
     public void delete( @PathVariable Integer id )
     {

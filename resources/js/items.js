@@ -2,7 +2,7 @@ const itemsController = new ItemsController(0);
 
 function addItemCard(item) {
     const itemHTML = '<div class="card col-lg-4 col-md-6 col-12" style="width: 18rem;">\n' +
-        '    <img src="' + item.img + '"  alt="product image">\n' +
+        '    <img src="' + item.imageUrl + '"  alt="product image">\n' +
         '    <div class="card-body">\n' +
         '        <h5 class="card-title">' + item.name + '</h5>\n' +
         '        <p class="card-text">' + item.description + '</p>\n' +
@@ -36,7 +36,22 @@ function loadCardsListFromItemsController() {
         addItemCard(item);
     }
 }
-
+function loadItemsFromDatabase() {
+    fetch('http://localhost:8080/item/all')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.length);
+        for(let i = 0; i < data.length; i++) {
+            itemsController.items.push(data[i]);                
+        }   
+    })
+    .then(() => {
+        loadCardsListFromItemsController();
+    })
+    .catch((error) => {
+        console.log('Error: ', error);
+    })
+}   
 loadStorageSampleData();
-itemsController.loadItemsFromLocalStorage();
 loadCardsListFromItemsController();
+loadItemsFromDatabase();

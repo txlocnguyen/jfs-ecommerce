@@ -3,15 +3,16 @@ class ItemsController {
         this.items = [];
         this.currentId = currentId;
     }
-    addItem(name, description, img) {
+    addItem(name, description, imageUrl) {
         const item = {
             id: this.currentId++,
             name: name,
             description: description,
-            img: img
+            imageUrl: imageUrl
         };
         this.items.push(item);
         localStorage.setItem("items", JSON.stringify(this.items));
+        this.save({name, description, imageUrl});
     }
     loadItemsFromLocalStorage() {
         const storageItems = localStorage.getItem("items")
@@ -22,6 +23,36 @@ class ItemsController {
                 this.items.push(item);
             }
         }
+    }
+    save({name, description, imageUrl}){
+        const data = { name,  description, imageUrl };
+
+        fetch('http://localhost:8080/item', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+    }
+
+    update({name, description, imageUrl}){
+        //TODO implement this method
+    }
+
+    delete(itemId){
+        //TODO implement this method
+    }
+
+    findById(itemId){
+        //TODO implement this method
     }
     
 }
