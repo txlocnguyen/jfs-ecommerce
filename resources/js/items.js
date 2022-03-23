@@ -1,16 +1,27 @@
 const itemsController = new ItemsController(0);
 
 function addItemCard(item) {
-    const itemHTML = '<div class="card col-lg-4 col-md-6 col-12" style="width: 18rem;">\n' +
+    const itemHTML = '<div id="'+item.id +'" class="card col-lg-4 col-md-6 col-12" style="width: 18rem;">\n' +
         '    <img src="' + item.imageUrl + '"  alt="product image">\n' +
         '    <div class="card-body">\n' +
         '        <h5 class="card-title">' + item.name + '</h5>\n' +
         '        <p class="card-text">' + item.description + '</p>\n' +
-        '        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>\n' +
+        '        <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>' +
+        '        <a href="#" class="btn btn-success"><i class="fas fa-edit"></i></a>' +
+        '        <a href="#" class="btn btn-danger btn-delete"><i class="fas fa-trash"></i></a>\n' +
         '    </div>\n' +
         '</div>';
     const itemsContainer = document.getElementById("list-items-row");
     itemsContainer.innerHTML += itemHTML;
+    let deleteButton = document.getElementsByClassName("btn-delete");
+    for(let i = 0; i < deleteButton.length; i++) {
+        let deleteBtn = deleteButton[i];
+        deleteBtn.addEventListener("click", () => {
+            let item = deleteBtn.parentElement.parentElement;
+            itemsController.delete(item.id);
+            location.reload();
+        })            
+    }
 }
 
 function loadStorageSampleData() {

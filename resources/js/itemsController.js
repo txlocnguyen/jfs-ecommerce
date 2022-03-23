@@ -48,7 +48,16 @@ class ItemsController {
     }
 
     delete(itemId){
-        //TODO implement this method
+        fetch(`http://localhost:8080/item/${itemId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then(response => console.log("Success:", response))
+        .catch((error) => {
+            console.error("Error:", error);
+        })
     }
 
     findById(itemId){
