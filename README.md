@@ -10,7 +10,11 @@ Back-end repo <a href="https://github.com/txlocnguyen/jfs-ecommerce-backend">her
 View back-end database <a href="https://locnguyen-ecommerce-backend.herokuapp.com/item/all">here</a>, deployed through Heroku<br/>
 Check the live website <a href="https://thefashionstore.netlify.app/">here</a>
 <br><br><br>
+
+
 # Images and Demo
+
+
 ## Main Home Page
 <img src="./pics/indexpage.png"/>
 <img src="./pics/indexpage3.png"/>
