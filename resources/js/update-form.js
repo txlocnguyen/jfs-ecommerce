@@ -22,4 +22,13 @@ editItemForm.addEventListener("submit", (event) => {
     editItemName.value = '';
     editItemDescription.value = '';
     editItemImageUrl.value = '';
+    setTimeout(() => {
+        window.location.href = "./shop.html";
+    }, 500);
+
 })
+document.getElementById('btncancel').onclick = function() {
+    setTimeout(() => {
+        window.location.href = "./shop.html";
+    }, 300);
+}
