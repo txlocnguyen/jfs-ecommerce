@@ -19,3 +19,23 @@
 .card { 
     margin-bottom: 20px;
  }
+ #top span {
+    font-style: italic;
+    font-weight: 400;
+    color: #CBF0A5;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #top h2 {
+    text-transform: uppercase;
+    color: #CBF0A5;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #top {
+    padding: 50px;
+    background-image: url(../images/shop-bg.png)
+  }
+  #top .inner-content{
+      text-align: center;
+  }
