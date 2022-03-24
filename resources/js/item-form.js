@@ -25,4 +25,7 @@ newItemForm.addEventListener("submit", (event) => {
     newItemName.value = '';
     newItemDescription.value = '';
     newItemImageUrl.value = '';
+    setTimeout(()=>{
+        alert("Thank you! Item has been added to shop.")
+    }, 1000)
 })
